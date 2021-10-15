@@ -44,7 +44,7 @@ resource "google_compute_instance" "vm_instance_two" {
 
 resource "google_sql_database" "database" {
   name     = "my-database"
-  instance = google_sql_database_instance.instance.name
+  instance = google_sql_database_instance.sql_db.name
 }
 
 resource "google_sql_database_instance" "sql_db" {
