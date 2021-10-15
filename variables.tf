@@ -12,3 +12,7 @@ variable "instance_name" {
   description = "Compute instance name"
   default     = "Provisioned by Terraform"
 }
+variable "project_id" {
+  description = "Project ID"
+  default = "Project_ID"
+}
