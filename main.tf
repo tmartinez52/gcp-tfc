@@ -11,7 +11,6 @@ resource "google_compute_network" "vpc_network" {
 resource "google_compute_instance" "vm_instance" {
     name = "terraform-instance"
     machine_type = "f1-micro"
-    tags = ["web", "dev"]
 
     boot_disk {
       initialize_params{
@@ -41,4 +40,19 @@ resource "google_compute_instance" "vm_instance_two" {
       access_config{
       }
     }
+}
+
+resource "google_sql_database" "database" {
+  name     = "my-database"
+  instance = google_sql_database_instance.instance.name
+}
+
+resource "google_sql_database_instance" "sql_db" {
+  name   = "my-db-instance"
+  region = var.region
+  settings {
+    tier = "db-f1-micro"
+  }
+
+  deletion_protection  = "true"
 }
