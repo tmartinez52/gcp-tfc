@@ -4,7 +4,7 @@ provider "google" {
   zone        = var.zone
 }
 
-resource "google_service_account" "builder" {
-  account_id = "builder"
-  display_name = "builder"
+resource "google_service_account" "github_builder" {
+  account_id = "github_builder"
+  display_name = "github_builder"
 }
