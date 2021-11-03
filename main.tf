@@ -12,7 +12,7 @@ resource "google_service_account" "github_builder" {
 data "google_iam_policy" "github_builder" {
   binding {
    role = "roles/cloudbuild.serviceAgent"
-   member = [
+   members = [
       "serviceAccount:github-builder@gcp30052.iam.gserviceaccount.com" 
      ]
   }
