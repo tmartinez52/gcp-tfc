@@ -24,6 +24,6 @@ data "google_iam_policy" "github_builder" {
   }
 }
 resource "google_service_account_iam_policy" "github_builder_iam" {
-  service_account_id = google_service_account.gihub_builder.name
+  service_account_id = google_service_account.github_builder.name
   policy_data        = data.google_iam_policy.github_builder.policy_data
 }
