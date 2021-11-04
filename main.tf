@@ -16,4 +16,10 @@ data "google_iam_policy" "github_builder" {
       "serviceAccount:github-builder@gcp30052.iam.gserviceaccount.com" 
      ]
   }
+  binding {
+   role = "roles/cloudbuild.serviceAccountUser"
+   members = [
+      "serviceAccount:github-builder@gcp30052.iam.gserviceaccount.com" 
+     ]
+  }
 }
